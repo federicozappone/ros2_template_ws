@@ -19,16 +19,17 @@ docker run -it \
     bash
 ```
 
-Source the ```entrypoint.sh``` script:
+Source the ```ros_entrypoint.sh``` script:
 
 ```bash
-source entrypoint.sh
+./ros_entrypoint.sh
 ```
 
 ## Installing the template workspace
 
 Clone this repository:
 ```bash
+cd $HOME
 git clone https://github.com/federicozappone/ros2_template_ws
 cd ros2_template_ws
 ```
@@ -96,7 +97,7 @@ ros2 pkg create --build-type ament_python my_package
 
 Inspect ```my_package``` structure
 ```bash
-cd ros2_template_ws/src/my_package
+cd $HOME/ros2_template_ws/src/my_package
 tree -L 3
 ```
 
@@ -121,7 +122,7 @@ tree -L 3
 
 Create a new ```ros2_template_ws/src/my_package/my_package/my_node.py```python file:
 ```bash
-touch ros2_template_ws/src/my_package/my_package/my_node.py
+touch $HOME/ros2_template_ws/src/my_package/my_package/my_node.py
 ```
 
 Add the code for a simple publisher:
@@ -199,7 +200,7 @@ setup(
 
 Build the workspace:
 ```bash
-cd ros2_template_ws
+cd $HOME/ros2_template_ws
 colcon build --symlink-install
 ```
 
